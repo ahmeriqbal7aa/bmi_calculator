@@ -36,3 +36,13 @@ It will be a multi screen app with simple functionality but full-on custom styli
 # Icon
 
 <img src="https://user-images.githubusercontent.com/73339220/100412458-9819fe00-3096-11eb-8a95-cc03bcef13d7.png" width=150 />
+
+# Screenshots
+
+<img src="https://user-images.githubusercontent.com/73339220/100525030-1386c700-31df-11eb-82c4-525cd52b0ee5.jpg" width=300 />
+
+<img src="https://user-images.githubusercontent.com/73339220/100525061-4e88fa80-31df-11eb-97fd-243b0967da00.jpg" width=300 />
+
+# Working
+
+<img src="https://user-images.githubusercontent.com/73339220/100525073-75dfc780-31df-11eb-86f1-3cecdc2feb25.gif" width=300 />
