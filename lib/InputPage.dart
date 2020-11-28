@@ -22,62 +22,56 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
+                  //TODO Assigning Color to Refactored Container
+                  child: new RepeatContainerCode(colors: Color(0xFF1D1E33)),
                 ),
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
+                  child: new RepeatContainerCode(colors: Color(0xFF1D1E33)),
                 ),
               ],
             ),
           ),
           //TODO Row 2
           Expanded(
-            child: Container(
-              margin: EdgeInsets.all(15.0),
-              decoration: BoxDecoration(
-                color: Color(0xFF1D1E33),
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-            ),
+            child: new RepeatContainerCode(colors: Color(0xFF1D1E33)),
           ),
           //TODO Row 3
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
+                  child: new RepeatContainerCode(colors: Color(0xFF1D1E33)),
                 ),
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
+                  child: new RepeatContainerCode(colors: Color(0xFF1D1E33)),
                 ),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+//TODO Auto Generated Container's Refactored Class
+class RepeatContainerCode extends StatelessWidget {
+  // const RepeatContainerCode({
+  //   Key key,
+  // }) : super(key: key);
+
+  // here we made a constructor that return color of this class
+  RepeatContainerCode({@required this.colors});
+  // here "final" keyword mean, at runtime we update the property of this class's object ("colors")
+  final Color colors;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        //TODO here we use color variable
+        color: colors,
+        borderRadius: BorderRadius.circular(10.0),
       ),
     );
   }
