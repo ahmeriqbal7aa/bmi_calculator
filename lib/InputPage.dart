@@ -7,6 +7,12 @@ import 'TextIconFile.dart';
 //TODO Initialize const variables "Active and deActive"
 const activeColor = Color(0xFF1D1E33);
 const deActiveColor = Color(0xFF111328);
+//TODO Define "enum" that is used to define const variables
+//enum used to display const values into text form
+enum Gender {
+  male,
+  female,
+}
 
 class InputPage extends StatefulWidget {
   @override
@@ -17,12 +23,12 @@ class _InputPageState extends State<InputPage> {
   Color maleColor = deActiveColor;
   Color femaleColor = deActiveColor;
   //TODO we made a function for updating gender's color
-  void UpdateColor(int gender) {
-    if (gender == 1) {
+  void UpdateColor(Gender gendertype) {
+    if (gendertype == Gender.male) {
       maleColor = activeColor;
       femaleColor = deActiveColor;
     }
-    if (gender == 2) {
+    if (gendertype == Gender.female) {
       femaleColor = activeColor;
       maleColor = deActiveColor;
     }
@@ -47,7 +53,7 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        UpdateColor(1);
+                        UpdateColor(Gender.male);
                       });
                     },
                     //TODO Assigning Color to Refactored Container code
@@ -66,7 +72,7 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        UpdateColor(2);
+                        UpdateColor(Gender.female);
                       });
                     },
                     child: RepeatContainerCode(
