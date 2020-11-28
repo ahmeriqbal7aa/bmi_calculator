@@ -20,19 +20,21 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleColor = deActiveColor;
-  Color femaleColor = deActiveColor;
-  //TODO we made a function for updating gender's color
-  void UpdateColor(Gender gendertype) {
-    if (gendertype == Gender.male) {
-      maleColor = activeColor;
-      femaleColor = deActiveColor;
-    }
-    if (gendertype == Gender.female) {
-      femaleColor = activeColor;
-      maleColor = deActiveColor;
-    }
-  }
+  //TODO here we define variable of enum type
+  Gender selectGender;
+  // Color maleColor = deActiveColor;
+  // Color femaleColor = deActiveColor;
+  // //TODO we made a function for updating gender's color
+  // void UpdateColor(Gender gendertype) {
+  //   if (gendertype == Gender.male) {
+  //     maleColor = activeColor;
+  //     femaleColor = deActiveColor;
+  //   }
+  //   if (gendertype == Gender.female) {
+  //     femaleColor = activeColor;
+  //     maleColor = deActiveColor;
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -53,12 +55,17 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        UpdateColor(Gender.male);
+                        // UpdateColor(Gender.male);
+                        selectGender = Gender.male;
                       });
                     },
                     //TODO Assigning Color to Refactored Container code
                     child: RepeatContainerCode(
-                      colors: maleColor,
+                      // colors: maleColor,
+                      //TODO use Ternary Operator for male
+                      colors: selectGender == Gender.male
+                          ? activeColor
+                          : deActiveColor,
                       //TODO Assigning Text and Icon to Refactored Text and Icon code
                       cardWidget: RepeatTextandIconCode(
                         iconData: FontAwesomeIcons.male,
@@ -72,11 +79,16 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        UpdateColor(Gender.female);
+                        // UpdateColor(Gender.female);
+                        selectGender = Gender.female;
                       });
                     },
                     child: RepeatContainerCode(
-                      colors: femaleColor,
+                      // colors: femaleColor,
+                      //TODO use Ternary Operator for female
+                      colors: selectGender == Gender.female
+                          ? activeColor
+                          : deActiveColor,
                       cardWidget: RepeatTextandIconCode(
                         iconData: FontAwesomeIcons.female,
                         label: 'FEMALE',
