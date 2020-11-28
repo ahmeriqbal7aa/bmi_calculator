@@ -24,6 +24,8 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   //TODO here we define variable of enum type
   Gender selectGender;
+  //TODO Define Slider Variable
+  int sliderHeight = 180;
   // Color maleColor = deActiveColor;
   // Color femaleColor = deActiveColor;
   // //TODO we made a function for updating gender's color
@@ -47,6 +49,7 @@ class _InputPageState extends State<InputPage> {
       ),
       //TODO Body
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           //TODO Row 1
           Expanded(
@@ -99,11 +102,41 @@ class _InputPageState extends State<InputPage> {
             child: new RepeatContainerCode(
               colors: Color(0xFF1D1E33),
               cardWidget: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'HEIGHT',
                     //TODO Access "ConstantFile" Functionality
                     style: LabelStyle,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        //convert int to string as "toString()"
+                        sliderHeight.toString(),
+                        //TODO Access "ConstantFile" functionality
+                        style: NumberStyle,
+                      ),
+                      Text(
+                        'cm',
+                        //TODO Access "ConstantFile" functionality
+                        style: LabelStyle,
+                      ),
+                    ],
+                  ),
+                  //TODO Add Slider
+                  Slider(
+                    value: sliderHeight.toDouble(),
+                    min: 120.0,
+                    max: 220.0,
+                    activeColor: Color(0xFFEB1555),
+                    inactiveColor: Color(0xFF8D8E98),
+                    onChanged: (double newValue) {
+                      setState(() {
+                        sliderHeight = newValue.round();
+                      });
+                    },
                   )
                 ],
               ),
