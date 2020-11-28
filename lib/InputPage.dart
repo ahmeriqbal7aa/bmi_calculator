@@ -60,7 +60,7 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: RepeatContainerCode(
                     // colors: maleColor,
-                    //TODO Received Gesture Detector
+                    //TODO Send to Gesture Detector
                     onPressed: () {
                       setState(() {
                         selectGender = Gender.male;
@@ -80,7 +80,7 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: RepeatContainerCode(
                     // colors: femaleColor,
-                    //TODO Received Gesture Detector
+                    //TODO Send to Gesture Detector
                     onPressed: () {
                       setState(() {
                         selectGender = Gender.female;
