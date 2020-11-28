@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'ConstantFile.dart';
 
 //TODO Auto Generated Text and Icon Refactored Class
 class RepeatTextandIconCode extends StatelessWidget {
@@ -27,10 +28,8 @@ class RepeatTextandIconCode extends StatelessWidget {
         Text(
           //TODO here we use String variable's object
           label,
-          style: TextStyle(
-            fontSize: 20.0,
-            color: Color(0xFF8D8E98),
-          ),
+          //TODO Access "ConstantFile" Functionality
+          style: LabelStyle,
         )
       ],
     );

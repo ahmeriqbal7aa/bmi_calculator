@@ -1,12 +1,14 @@
+import 'package:bmi_calculator/ConstantFile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'ContainerFile.dart';
 import 'TextIconFile.dart';
+import 'ConstantFile.dart';
 
-//TODO Initialize const variables "Active and deActive"
-const activeColor = Color(0xFF1D1E33);
-const deActiveColor = Color(0xFF111328);
+// //TODO Initialize const variables "Active and deActive"
+// const activeColor = Color(0xFF1D1E33);
+// const deActiveColor = Color(0xFF111328);
 //TODO Define "enum" that is used to defining named const values
 // "enum" display const values into text form
 enum Gender {
@@ -59,7 +61,7 @@ class _InputPageState extends State<InputPage> {
                         selectGender = Gender.male;
                       });
                     },
-                    //TODO use Ternary Operator for male
+                    //TODO use Ternary Operator for male and Access "ConstantFile" Functionality
                     colors: selectGender == Gender.male
                         ? activeColor
                         : deActiveColor,
@@ -79,7 +81,7 @@ class _InputPageState extends State<InputPage> {
                         selectGender = Gender.female;
                       });
                     },
-                    //TODO use Ternary Operator for female
+                    //TODO use Ternary Operator for female and Access "ConstantFile" Functionality
                     colors: selectGender == Gender.female
                         ? activeColor
                         : deActiveColor,
@@ -96,6 +98,15 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: new RepeatContainerCode(
               colors: Color(0xFF1D1E33),
+              cardWidget: Column(
+                children: [
+                  Text(
+                    'HEIGHT',
+                    //TODO Access "ConstantFile" Functionality
+                    style: LabelStyle,
+                  )
+                ],
+              ),
             ),
           ),
           //TODO Row 3
