@@ -8,3 +8,8 @@ const LabelStyle = TextStyle(
   fontSize: 20.0,
   color: Color(0xFF8D8E98),
 );
+//TODO Initialize const variables "NumberStyle"
+const NumberStyle = TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.w900,
+);
