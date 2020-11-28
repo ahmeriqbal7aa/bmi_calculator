@@ -4,12 +4,30 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'ContainerFile.dart';
 import 'TextIconFile.dart';
 
+//TODO Initialize const variables "Active and deActive"
+const activeColor = Color(0xFF1D1E33);
+const deActiveColor = Color(0xFF111328);
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
 }
 
 class _InputPageState extends State<InputPage> {
+  Color maleColor = deActiveColor;
+  Color femaleColor = deActiveColor;
+  //TODO we made a function for updating gender's color
+  void UpdateColor(int gender) {
+    if (gender == 1) {
+      maleColor = activeColor;
+      femaleColor = deActiveColor;
+    }
+    if (gender == 2) {
+      femaleColor = activeColor;
+      maleColor = deActiveColor;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,22 +43,38 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  //TODO Assigning Color to Refactored Container
-                  child: new RepeatContainerCode(
-                    colors: Color(0xFF1D1E33),
-                    //TODO Assigning Text and Icon to Refactored Text and Icon
-                    cardWidget: RepeatTextandIconCode(
-                      iconData: FontAwesomeIcons.male,
-                      label: 'MALE',
+                  //TODO Gesture Detector
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        UpdateColor(1);
+                      });
+                    },
+                    //TODO Assigning Color to Refactored Container code
+                    child: RepeatContainerCode(
+                      colors: maleColor,
+                      //TODO Assigning Text and Icon to Refactored Text and Icon code
+                      cardWidget: RepeatTextandIconCode(
+                        iconData: FontAwesomeIcons.male,
+                        label: 'MALE',
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
-                  child: new RepeatContainerCode(
-                    colors: Color(0xFF1D1E33),
-                    cardWidget: RepeatTextandIconCode(
-                      iconData: FontAwesomeIcons.female,
-                      label: 'FEMALE',
+                  //TODO Gesture Detector
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        UpdateColor(2);
+                      });
+                    },
+                    child: RepeatContainerCode(
+                      colors: femaleColor,
+                      cardWidget: RepeatTextandIconCode(
+                        iconData: FontAwesomeIcons.female,
+                        label: 'FEMALE',
+                      ),
                     ),
                   ),
                 ),
