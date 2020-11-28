@@ -45,4 +45,4 @@ It will be a multi screen app with simple functionality but full-on custom styli
 
 # Working
 
-<img src="https://user-images.githubusercontent.com/73339220/100525073-75dfc780-31df-11eb-86f1-3cecdc2feb25.gif" width=300 />
+<img src="https://user-images.githubusercontent.com/73339220/100525225-b55ae380-31e0-11eb-8933-baadd2a78446.gif" width=300 />
