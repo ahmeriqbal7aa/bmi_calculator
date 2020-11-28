@@ -7,8 +7,8 @@ import 'TextIconFile.dart';
 //TODO Initialize const variables "Active and deActive"
 const activeColor = Color(0xFF1D1E33);
 const deActiveColor = Color(0xFF111328);
-//TODO Define "enum" that is used to define const variables
-//enum used to display const values into text form
+//TODO Define "enum" that is used to defining named const values
+// "enum" display const values into text form
 enum Gender {
   male,
   female,
