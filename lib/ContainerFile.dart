@@ -8,21 +8,26 @@ class RepeatContainerCode extends StatelessWidget {
 
   //TODO Define Constructor
   // here we made a constructor that return color and widget of this class
-  RepeatContainerCode({@required this.colors, this.cardWidget});
+  RepeatContainerCode({@required this.colors, this.cardWidget, this.onPressed});
   //TODO Define Variables for Container Code
-  // here "final" keyword mean, at runtime we update the property of this class's objects ("colors" and "cardWidget")
+  // here "final" keyword mean, at runtime we update the property of this class's objects ("colors" and "cardWidget" and "onPressed")
   final Color colors;
   final Widget cardWidget;
+  final Function onPressed;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(15.0),
-      //TODO here we use Widget variable's object
-      child: cardWidget,
-      decoration: BoxDecoration(
-        //TODO here we use Color variable's object
-        color: colors,
-        borderRadius: BorderRadius.circular(10.0),
+    //TODO place container in Gesture Detector
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        margin: EdgeInsets.all(15.0),
+        //TODO here we use Widget variable's object
+        child: cardWidget,
+        decoration: BoxDecoration(
+          //TODO here we use Color variable's object
+          color: colors,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
       ),
     );
   }

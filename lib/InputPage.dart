@@ -51,48 +51,41 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  //TODO Gesture Detector
-                  child: GestureDetector(
-                    onTap: () {
+                  child: RepeatContainerCode(
+                    // colors: maleColor,
+                    //TODO Received Gesture Detector
+                    onPressed: () {
                       setState(() {
-                        // UpdateColor(Gender.male);
                         selectGender = Gender.male;
                       });
                     },
-                    //TODO Assigning Color to Refactored Container code
-                    child: RepeatContainerCode(
-                      // colors: maleColor,
-                      //TODO use Ternary Operator for male
-                      colors: selectGender == Gender.male
-                          ? activeColor
-                          : deActiveColor,
-                      //TODO Assigning Text and Icon to Refactored Text and Icon code
-                      cardWidget: RepeatTextandIconCode(
-                        iconData: FontAwesomeIcons.male,
-                        label: 'MALE',
-                      ),
+                    //TODO use Ternary Operator for male
+                    colors: selectGender == Gender.male
+                        ? activeColor
+                        : deActiveColor,
+                    //TODO Assigning Text and Icon to Refactored Text and Icon code
+                    cardWidget: RepeatTextandIconCode(
+                      iconData: FontAwesomeIcons.male,
+                      label: 'MALE',
                     ),
                   ),
                 ),
                 Expanded(
-                  //TODO Gesture Detector
-                  child: GestureDetector(
-                    onTap: () {
+                  child: RepeatContainerCode(
+                    // colors: femaleColor,
+                    //TODO Received Gesture Detector
+                    onPressed: () {
                       setState(() {
-                        // UpdateColor(Gender.female);
                         selectGender = Gender.female;
                       });
                     },
-                    child: RepeatContainerCode(
-                      // colors: femaleColor,
-                      //TODO use Ternary Operator for female
-                      colors: selectGender == Gender.female
-                          ? activeColor
-                          : deActiveColor,
-                      cardWidget: RepeatTextandIconCode(
-                        iconData: FontAwesomeIcons.female,
-                        label: 'FEMALE',
-                      ),
+                    //TODO use Ternary Operator for female
+                    colors: selectGender == Gender.female
+                        ? activeColor
+                        : deActiveColor,
+                    cardWidget: RepeatTextandIconCode(
+                      iconData: FontAwesomeIcons.female,
+                      label: 'FEMALE',
                     ),
                   ),
                 ),
