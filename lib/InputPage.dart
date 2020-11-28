@@ -6,6 +6,7 @@ import 'ContainerFile.dart';
 import 'TextIconFile.dart';
 import 'ConstantFile.dart';
 import 'ResultFile.dart';
+import 'CalculatorFile.dart';
 
 // //TODO Initialize const variables "Active and deActive"
 // const activeColor = Color(0xFF1D1E33);
@@ -239,9 +240,20 @@ class _InputPageState extends State<InputPage> {
           //TODO Row 4 and GestureDetector Container
           GestureDetector(
             onTap: () {
+              //TODO here we send height and weight to "CalculatorFile"
+              CalculatorStore cal =
+                  CalculatorStore(height: sliderHeight, weight: sliderWeight);
               //TODO Navigate to Result Screen
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ResultScreen()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultScreen(
+                    bmiResult: cal.calculateBMI(),
+                    resultCriteria: cal.getResult(),
+                    resultDescription: cal.getDescription(),
+                  ),
+                ),
+              );
             },
             child: Container(
               child: Center(
@@ -263,7 +275,7 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-//TODO we create class for round_icon buttons
+//TODO we create separate class for round_icon buttons
 class RoundIcons extends StatelessWidget {
   final IconData iconData;
   final Function onPress;
