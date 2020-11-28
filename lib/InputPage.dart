@@ -8,7 +8,7 @@ import 'TextIconFile.dart';
 const activeColor = Color(0xFF1D1E33);
 const deActiveColor = Color(0xFF111328);
 //TODO Define "enum" that is used to defining named const values
-// "enum" display const values into text form
+// "enum" is display const values into text form
 enum Gender {
   male,
   female,
