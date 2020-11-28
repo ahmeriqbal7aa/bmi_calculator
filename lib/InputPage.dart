@@ -24,8 +24,10 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   //TODO here we define variable of enum type
   Gender selectGender;
-  //TODO Define Slider Variable
+  //TODO Define Variable
   int sliderHeight = 180;
+  int sliderWeight = 60;
+  int sliderAge = 20;
   // Color maleColor = deActiveColor;
   // Color femaleColor = deActiveColor;
   // //TODO we made a function for updating gender's color
@@ -149,18 +151,121 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: new RepeatContainerCode(
                     colors: Color(0xFF1D1E33),
+                    cardWidget: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'WEIGHT',
+                          //TODO Access "ConstantFile" Functionality
+                          style: LabelStyle,
+                        ),
+                        Text(
+                          sliderWeight.toString(),
+                          //TODO Access "ConstantFile" Functionality
+                          style: NumberStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIcons(
+                              iconData: FontAwesomeIcons.minus,
+                              onPress: () {
+                                setState(() {
+                                  sliderWeight--;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10.0),
+                            RoundIcons(
+                              iconData: FontAwesomeIcons.plus,
+                              onPress: () {
+                                setState(() {
+                                  sliderWeight++;
+                                });
+                              },
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
                   child: new RepeatContainerCode(
                     colors: Color(0xFF1D1E33),
+                    cardWidget: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'AGE',
+                          //TODO Access "ConstantFile" Functionality
+                          style: LabelStyle,
+                        ),
+                        Text(
+                          sliderAge.toString(),
+                          //TODO Access "ConstantFile" Functionality
+                          style: NumberStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIcons(
+                              iconData: FontAwesomeIcons.minus,
+                              onPress: () {
+                                setState(() {
+                                  sliderAge--;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10.0),
+                            RoundIcons(
+                              iconData: FontAwesomeIcons.plus,
+                              onPress: () {
+                                setState(() {
+                                  sliderAge++;
+                                });
+                              },
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],
             ),
           ),
+          //TODO Row 4
+          Container(
+            color: Color(0xFFEB1555),
+            margin: EdgeInsets.only(top: 10.0),
+            width: double.infinity,
+            height: 80.0,
+          )
         ],
       ),
+    );
+  }
+}
+
+//TODO we create class for round_icon buttons
+class RoundIcons extends StatelessWidget {
+  final IconData iconData;
+  final Function onPress;
+  RoundIcons({@required this.iconData, this.onPress});
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      child: Icon(iconData),
+      onPressed: onPress,
+      elevation: 6.0,
+      constraints: BoxConstraints.tightFor(
+        height: 56.0,
+        width: 56.0,
+      ),
+      shape: CircleBorder(),
+      fillColor: Color(0xFF4C4F5E),
     );
   }
 }
